@@ -20,7 +20,6 @@ CREATE TABLE transactions
 (
   id SERIAL8 PRIMARY KEY,
   value INT4,
-  trans_date date,
   tag_id INT8 REFERENCES tags(id),
   merchant_id INT8 REFERENCES merchants(id)
 );

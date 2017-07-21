@@ -2,8 +2,10 @@ require_relative('../db/sql_runner')
 
 class Tag
 
+  attr_reader :id
+
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @type = options['type']
   end
 
