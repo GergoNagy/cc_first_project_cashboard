@@ -1,0 +1,25 @@
+<h1>all of the transactions</h1>
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th></th>
+    <th>Date</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Shops Name</th>
+  </tr>
+  <% for transaction in @transactions %>
+  <tr>
+      <td><%= transaction.value %></td>
+      <td>|</td>
+      <td><%= transaction %></td>
+      <td>|</td>
+      <td><%= transaction %></td>
+      <td>|</td>
+      <td><%= transaction %></td>
+      <td>|</td>
+  </tr>
+  <% end %>
+</table>
