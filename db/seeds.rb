@@ -31,7 +31,7 @@ merchant2.save
 merchant3.save
 
 transaction1 = Transaction.new({
-    'value' => 12.55, 
+    'value' => 12, 
     'trans_date' => 'Jan-12-2017',
     'tag_id' => tag1.id, 
     'merchant_id' => merchant1.id})

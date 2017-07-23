@@ -10,16 +10,18 @@
     <th></th>
     <th>Shops Name</th>
   </tr>
-  <% for transaction in @transactions %>
+  <% @transactions.each do |transaction| %>
   <tr>
       <td><%= transaction.value %></td>
       <td>|</td>
-      <td><%= transaction %></td>
+      <td><%= transaction.trans_date %></td>
       <td>|</td>
-      <td><%= transaction %></td>
+      <td><%= transaction.tag.type %></td>
       <td>|</td>
-      <td><%= transaction %></td>
+      <td><%= transaction.merchant.name%></td>
       <td>|</td>
   </tr>
   <% end %>
 </table>
+
+

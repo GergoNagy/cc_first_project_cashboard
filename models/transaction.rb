@@ -5,7 +5,7 @@ require_relative( './merchant' )
 
 class Transaction
 
-  attr_accessor :trans_date
+  attr_accessor :trans_date, :value, :tag_id, :merchant_id
   attr_reader :id
 
   def initialize( options )
@@ -29,6 +29,17 @@ class Transaction
   def self.delete_all
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)
+  end
+
+
+  def merchant
+    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
+    Merchant.new(SqlRunner.run(sql)[0])
+  end
+
+  def tag
+    sql = "SELECT * FROM tags WHERE id = #{@tag_id}"
+    Tag.new(SqlRunner.run(sql)[0])
   end
 
 

@@ -1,7 +1,9 @@
 require_relative('../db/sql_runner')
 
+
 class Merchant
 
+  attr_accessor :name, :icon
   attr_reader :id
   
   def initialize(options)
@@ -24,6 +26,7 @@ class Merchant
     sql = "DELETE FROM merchants;"
     SqlRunner.run(sql)
   end
+
 
 
 end

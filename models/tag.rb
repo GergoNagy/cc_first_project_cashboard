@@ -2,6 +2,7 @@ require_relative('../db/sql_runner')
 
 class Tag
 
+  attr_accessor :type
   attr_reader :id
 
   def initialize(options)
