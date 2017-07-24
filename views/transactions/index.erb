@@ -1,4 +1,4 @@
-<h1>all of the transactions</h1>
+<h1>All of the transactions</h1>
 <table>
   <tr>
     <th>Value</th>
@@ -12,13 +12,13 @@
   <% @transactions.each do |transaction| %>
   <tr>
       <td>£ <%= transaction.value %></td>
-      <td>|</td>
+      <td></td>
       <td><a href="/tags/<%=transaction.tag_id %>"><%= transaction.tag.type %></td>
-      <td>|</td>
+      <td></td>
       <td><%= transaction.merchant.name%></td>
-      <td>|</td>
+      <td></td>
       <td><%= transaction.trans_date %></td>
-      <td>|</td>     
+      <td></td>     
   </tr>
   <% end %>
 </table>

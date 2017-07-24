@@ -62,8 +62,8 @@ class Transaction
     result = SqlRunner.run(sql)[0]
     return result.first[1].to_i
   end
-binding.pry
-nil
+# binding.pry
+# nil
   
   
 
