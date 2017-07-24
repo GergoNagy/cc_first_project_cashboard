@@ -1,9 +1,25 @@
-value - text
-
-trans_date text
-
-tag.type - drop down
-
-merchant.name - drop down
-
-submit - button
+<form method="post" action="/transactions">
+  
+  <!-- value - text -->
+  <label for="value_field">Price</label>
+  <input type="text" name="value" id="value_field"/>
+  <!-- tag.type - drop down -->
+  <label for="tag_selection">Type</label>
+  <select name="tag_id" id="tag_selection">
+    <% @tags.each do |tag| %>
+      <option value="<%=tag.id%>"><%=tag.type%></option>
+    <% end %>
+  </select>
+  <!-- merchant.name - drop down -->
+  <label for="merchant_selection">Shops Name</label>
+  <select name="merchant_id" id="merchant_selection">
+    <% @merchants.each do |merchant| %>
+      <option value="<%= merchant.id %>"><%= merchant.name %></option>
+    <% end %>
+  </select>
+  <!-- trans_date text -->
+  <label for="date">Date</label>
+  <input type="date" name="trans_date" id="date">
+  <!-- submit - button -->
+  <input type="submit" value="Save Transactions"/>
+</form>

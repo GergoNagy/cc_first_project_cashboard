@@ -19,8 +19,8 @@ CREATE TABLE merchants
 CREATE TABLE transactions
 (
   id SERIAL8 PRIMARY KEY,
-  value INT4,
-  trans_date date,
+  value INT4 FLOAT(3),
+  trans_date DATE,
   tag_id INT8 REFERENCES tags(id),
   merchant_id INT8 REFERENCES merchants(id)
 );

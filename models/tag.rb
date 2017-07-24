@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../db/sql_runner')
 
 class Tag
@@ -30,6 +31,7 @@ class Tag
     sql = "DELETE FROM tags;"
     SqlRunner.run(sql)
   end
+ 
 
 
 end
