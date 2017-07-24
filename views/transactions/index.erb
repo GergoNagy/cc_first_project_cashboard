@@ -3,22 +3,22 @@
   <tr>
     <th>Value</th>
     <th></th>
-    <th>Date</th>
-    <th></th>
     <th>Type</th>
     <th></th>
     <th>Shops Name</th>
+    <th></th>
+    <th>Date</th>
   </tr>
   <% @transactions.each do |transaction| %>
   <tr>
-      <td><%= transaction.value %></td>
+      <td>£ <%= transaction.value %></td>
       <td>|</td>
-      <td><%= transaction.trans_date %></td>
-      <td>|</td>
-      <td><<%= transaction.tag.type %></td>
+      <td><a href="/tags/<%=transaction.tag_id %>"><%= transaction.tag.type %></td>
       <td>|</td>
       <td><%= transaction.merchant.name%></td>
       <td>|</td>
+      <td><%= transaction.trans_date %></td>
+      <td>|</td>     
   </tr>
   <% end %>
 </table>

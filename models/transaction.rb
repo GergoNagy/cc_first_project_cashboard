@@ -48,12 +48,22 @@ class Transaction
     SqlRunner.run(sql)[0]
   end
 
-  def self.total_amount_by_tag(id)
+  def self.amount_by_tag(id)
     sql = "SELECT transactions.*, tags.type FROM transactions
            INNER JOIN tags ON tags.id = tag_id
-           WHERE transactions.tag_id = id;"
+           WHERE tag_id = #{id};"
     SqlRunner.run(sql).map{|amount| Transaction.new(amount)}
   end
+
+  def self.total_amount_by_tag(id)
+    sql = "SELECT SUM(value) FROM transactions
+           INNER JOIN tags ON tags.id = tag_id
+           WHERE tag_id = #{id};"
+    result = SqlRunner.run(sql)[0]
+    return result.first[1].to_i
+  end
+binding.pry
+nil
   
   
 
