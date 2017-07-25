@@ -1,6 +1,9 @@
+<br>
+<br>
+
 <form method="post" action="/transactions/<%= @transactions.id %>">
   
   <label for="value_field">Price</label>
-  <input type="text" name="value" id="value_field" value="@transactions.value" />
+  <input type="text" name="value" id="value_field" value="<%=@transactions.value%>" />
  
 </form>

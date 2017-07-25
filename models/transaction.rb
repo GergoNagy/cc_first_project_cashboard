@@ -25,6 +25,7 @@ class Transaction
 
   def update
     sql = "UPDATE transactions SET (value, trans_date, tag_id, merchant_id) = (#{@value}, '#{@trans_date}', '#{@tag_id}', '#{@merchant_id}') WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
   def merchant
@@ -37,12 +38,18 @@ class Transaction
     Tag.new(SqlRunner.run(sql)[0])
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = #{id}"
+    Transaction.new(SqlRunner.run(sql)[0])
+  end
+  # binding.pry
+  # nil
+
   def self.delete(id)
     sql = "DELETE FROM transactions WHERE id = #{id}"
     SqlRunner.run(sql)
   end
-  # binding.pry
-  # nil
+  
   def self.all
     sql = "SELECT * FROM transactions;"
     SqlRunner.run(sql).map {|transaction| Transaction.new(transaction)}
