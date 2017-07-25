@@ -23,7 +23,11 @@ class Transaction
     @id = SqlRunner.run(sql)[0]['id'].to_i
   end
 
-   def merchant
+  def update
+    sql = "UPDATE transactions SET (value, trans_date, tag_id, merchant_id) = (#{@value}, '#{@trans_date}', '#{@tag_id}', '#{@merchant_id}') WHERE id = #{id}"
+  end
+
+  def merchant
     sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
     Merchant.new(SqlRunner.run(sql)[0])
   end
