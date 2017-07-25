@@ -25,6 +25,14 @@ div {
 
 }
 
+.btn-edit {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
 /*a:hover {
   ha fole viszed az egeret
     background-color: lightgreen;

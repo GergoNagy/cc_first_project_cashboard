@@ -14,10 +14,12 @@
       <td><a href="/tags/<%=transaction.tag_id %>"><%= transaction.tag.type %></td>
       <td><%= transaction.merchant.name%></td>
       <td><%= transaction.trans_date %></td>
-      <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
+      <td align="center"><form action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input type="submit" value="delete"/></form></td>
-      <td><form action="/transactions/<%= transaction.id %>/edit" method="POST">
-        <input type="submit" value="edit"/></form></td>
+      <td align="center"><form action="/transactions/<%= transaction.id %>/edit" method="get">
+        <input type="submit" value="edit" name="Edit"/>
+        </form></td>
+    </td>
   </tr>
   <% end %>
 </table>

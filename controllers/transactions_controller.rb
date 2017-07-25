@@ -31,7 +31,9 @@ post '/transactions' do
 end
 
 get '/transactions/:id/edit' do
-  @transactions = Transaction.find(params[:id])
+  @transaction = Transaction.find(params[:id])
+  @tags = Tag.all
+  @merchants = Merchant.all
   erb(:"transactions/edit")
 end
 

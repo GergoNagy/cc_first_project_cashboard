@@ -1,9 +1,29 @@
 <br>
 <br>
-
-<form method="post" action="/transactions/<%= @transactions.id %>">
+<form method="post" action="/transactions/<%= @transaction.id %>">
   
   <label for="value_field">Price</label>
-  <input type="text" name="value" id="value_field" value="<%=@transactions.value%>" />
+  <input type="text" name="value" id="value_field" value="<%=@transaction.value%>" />
+  <!-- tag.type - drop down -->
+  <label for="tag_selection">Type</label>
+  <select  name="tag_id" id="tag_selection">
+    <% @tags.each do |tag| %>
+      <option value=<%=tag.id%>
+      <%= "selected" if @transaction.tag_id == tag.id %>><%=tag.type%></option>
+    <% end %>
+  </select>
+  <!-- merchant.name - drop down -->
+  <label for="merchant_selection">Shops Name</label>
+  <select  name="merchant_id" id="merchant_selection">
+    <% @merchants.each do |merchant| %>
+      <option value=<%= merchant.id%> 
+        <%= "selected" if @transaction.merchant_id == merchant.id%> ><%= merchant.name %> </option>
+    <% end %>
+  </select>
+  <!-- trans_date text -->
+  <label for="date">Date</label>
+  <input type="date" name="trans_date" id="date" value="<%=@transaction.trans_date  %>">
+  <!-- submit - button -->
+  <input type="submit" value="Edit Transactions"/>
  
 </form>
