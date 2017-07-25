@@ -1,24 +1,21 @@
 <h1>All of the transactions</h1>
-<table>
+<table align="center">
   <tr>
     <th>Value</th>
-    <th></th>
     <th>Type</th>
-    <th></th>
     <th>Shops Name</th>
-    <th></th>
     <th>Date</th>
   </tr>
+
   <% @transactions.each do |transaction| %>
+  
   <tr>
-      <td>£ <%= transaction.value %></td>
-      <td></td>
+      <td>£ <%= transaction.value %></td>    
       <td><a href="/tags/<%=transaction.tag_id %>"><%= transaction.tag.type %></td>
-      <td></td>
       <td><%= transaction.merchant.name%></td>
-      <td></td>
       <td><%= transaction.trans_date %></td>
-      <td></td>     
+      <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
+        <input type="submit" value="delete"/></form></td>
   </tr>
   <% end %>
 </table>

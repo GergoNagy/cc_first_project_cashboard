@@ -33,6 +33,12 @@ class Transaction
     Tag.new(SqlRunner.run(sql)[0])
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM transactions WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+  # binding.pry
+  # nil
   def self.all
     sql = "SELECT * FROM transactions;"
     SqlRunner.run(sql).map {|transaction| Transaction.new(transaction)}

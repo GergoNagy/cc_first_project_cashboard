@@ -1,5 +1,7 @@
 require('pry-byebug')
 require_relative('../db/sql_runner')
+require_relative( '../db/sql_runner' )
+require_relative( './merchant' )
 
 class Tag
 
@@ -7,7 +9,7 @@ class Tag
   attr_reader :id
 
   def initialize(options)
-    @id = options['id'].to_i if options['id']
+    @id = options['id'].to_i
     @type = options['type']
   end
 

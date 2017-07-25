@@ -13,7 +13,8 @@
       <li><a class="active" >Total spent: £  <%= Transaction.total_amount.first[1] %></a></li>
       <li><a href="/">Home</a></li>
       <li><a href="/transactions">All of your transactions</a></li>    
-      <li><a href="/transactions/new">Create a new transaction</a></li>
+      <li><a href="/transactions/new">New transaction</a></li>
+      <li><a href="/tags/new">New tag</a></li>
     </ul>
       <%= yield %>
   </body>

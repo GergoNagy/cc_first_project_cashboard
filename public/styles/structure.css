@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   font-family: 'Indie Flower', cursive;
   font-size: 15px;
+  background-color: lightgrey;
 }
 
 h1 {
@@ -21,7 +22,7 @@ a:visited {
 
 div {
   text-align: center;
-  
+
 }
 
 /*a:hover {
