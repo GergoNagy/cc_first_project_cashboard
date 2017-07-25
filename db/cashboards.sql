@@ -24,3 +24,9 @@ CREATE TABLE transactions
   tag_id INT8 REFERENCES tags(id),
   merchant_id INT8 REFERENCES merchants(id)
 );
+
+CREATE TABLE wallets
+(
+  id SERIAL8 PRIMARY KEY,
+  budget FLOAT(3)
+);
