@@ -31,6 +31,14 @@ li a:hover {
     background-color: #4CAF50;
 }
 
-.active_left {
+.active_left_plus {
     background-color: #4CAF50;
+}
+
+.active_left_zero {
+    background-color: #E1DB10;
+}
+
+.active_left_minus {
+    background-color: #F93A3A;
 }

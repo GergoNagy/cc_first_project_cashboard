@@ -18,7 +18,14 @@
       <li><a href="/tags/new">New tag</a></li>
       <li><a href="/merchants/new">New Shop</a></li>
       <li><a href="/wallets">Set your budget</a></li>
-      <li><a class="active_left" >Total budget: £  <%= Wallet.new_budget%></a></li>
+      <li><% if Wallet.new_budget > 0 %>
+                <a class="active_left_plus" >
+                Total budget: £  <%= Wallet.new_budget%></a></li>
+            
+            <% else Wallet.new_budget > 0 %>
+                <a class="active_left_minus" >
+                Total budget: £  <%= Wallet.new_budget%></a></li>
+            <% end %>
     </ul>
       <%= yield %>
   </body>
