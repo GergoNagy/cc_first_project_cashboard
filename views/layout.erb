@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/styles/table.css">
   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
+<br>
   <body>
     <ul>
       <li><a class="active" >Total spent: £  <%= Transaction.total_amount.first[1] %></a></li>
@@ -16,6 +17,8 @@
       <li><a href="/transactions/new">New transaction</a></li>
       <li><a href="/tags/new">New tag</a></li>
       <li><a href="/merchants/new">New Shop</a></li>
+      <li><a href="/wallets">Set your budget</a></li>
+      <li><a class="active_left" >Total budget: £  <%= Wallet.new_budget%></a></li>
     </ul>
       <%= yield %>
   </body>

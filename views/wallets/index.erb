@@ -1,0 +1,7 @@
+<br>
+<br>
+<form method="post" action="/wallets/<%= @wallet.id %>">
+  <label for="new-wallet-field">Add your budget here</label>
+  <input type="number" name="budget" id="new-wallet-field" value="<%= @wallet.budget %>"/>
+  <input type="submit" value="Save your new budget">
+</form>

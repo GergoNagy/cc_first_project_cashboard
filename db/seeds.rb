@@ -1,6 +1,7 @@
 require_relative('../models/tag')
 require_relative('../models/merchant')
 require_relative('../models/transaction')
+require_relative('../models/wallet')
 
 Transaction.delete_all()
 Tag.delete_all()
@@ -50,5 +51,8 @@ transaction1.save
 transaction2.save
 transaction3.save
 
-
+budget = Wallet.new({
+    'budget' => 200
+    })
+budget.save
 

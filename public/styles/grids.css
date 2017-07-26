@@ -3,7 +3,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #e7e7e7;
+    border: 2px solid #e7e7e7;
     background-color: #f3f3f3;
     border-radius: 15px;
     text-shadow: 20px;
@@ -28,5 +28,9 @@ li a:hover {
 }
 
 .active {
+    background-color: #4CAF50;
+}
+
+.active_left {
     background-color: #4CAF50;
 }
