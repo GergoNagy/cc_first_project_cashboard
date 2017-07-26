@@ -1,11 +1,18 @@
 body {
-  /*background: url('/images/background1.jpg');*/
+  background-size: 1000px;
+  background-position: right button;
   background-color: white;
   background-repeat: no-repeat;
   font-family: 'Indie Flower', cursive;
   font-size: 15px;
-  background-color: lightgrey;
 }
+
+.index_main {
+  background: url('/images/mainlogo.png');
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  }
 
 h1 {
   font-variant-position: center;
@@ -25,16 +32,5 @@ div {
 
 }
 
-.btn-edit {
-  display: inline-block;
-  padding: 10px;
-  border: 1px solid blue;
-  border-radius: 5px;
-  font-size: 10px;
-}
 
-/*a:hover {
-  ha fole viszed az egeret
-    background-color: lightgreen;
-}*/
 

@@ -42,3 +42,7 @@ li a:hover {
 .active_left_minus {
     background-color: #F93A3A;
 }
+
+.last_li {
+    float: right;
+}
